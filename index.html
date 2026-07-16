@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        body {
+            margin: 0; padding: 0; overflow: hidden; height: 100vh; width: 100vw;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            font-family: 'Orbitron', sans-serif; background: rgba(10, 15, 25, 0.75);
+            backdrop-filter: blur(12px); color: #00d4ff; border: 2px solid #00d4ff;
+            border-radius: 15px; box-sizing: border-box;
+            box-shadow: inset 0 0 15px #00d4ff33, 0 0 20px #00d4ff55;
+        }
+        h3 { margin-top: 10px; letter-spacing: 2px; text-shadow: 0 0 10px #00d4ff; }
+        .status-dot { height: 12px; width: 12px; background-color: #333; border-radius: 50%; display: inline-block; margin-left: 10px; transition: all 0.5s ease; }
+        #dot.active { background: #00ff88; box-shadow: 0 0 15px #00ff88, 0 0 30px #00ff88; animation: pulse 1.5s infinite; }
+        #log-container {
+            width: 80%; height: 80px; margin-top: 10px; padding: 10px;
+            background: rgba(0, 0, 0, 0.3); border: 1px solid #00d4ff33;
+            font-size: 10px; color: #00ff88; overflow-y: auto; text-align: left;
+            font-family: 'Courier New', monospace;
+        }
+        button { background: rgba(0, 212, 255, 0.1); border: 1px solid #00d4ff; color: #00d4ff; padding: 8px 15px; font-family: 'Orbitron', sans-serif; font-size: 9px; cursor: pointer; margin: 4px; transition: 0.3s; text-transform: uppercase; }
+        button:hover { background: #00d4ff; color: #000; box-shadow: 0 0 15px #00d4ff; }
+        @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.7; } 100% { transform: scale(1); opacity: 1; } }
+    </style>
+</head>
+<body>
+    <h3>KORO OS</h3>
+    <p>Status: <span id="status-text">Offline</span> <span id="dot" class="status-dot"></span></p>
+    <div id="log-container">Initializing system...</div>
+    <div style="margin-top: 10px;">
+        <button id="run-btn">RUN KORO</button>
+        <button id="stop-btn">STOP KORO</button>
+        <button id="hide-btn">HIDE</button>
+        <button id="close-btn" style="border-color: #ff4b4b; color: #ff4b4b;">EXIT</button>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+</html>
